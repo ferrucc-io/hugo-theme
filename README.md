@@ -1,10 +1,7 @@
-# Ananke, A theme for [Hugo](http://gohugo.io/), a framework for building websites.
+# Ferruccio, my theme for [Hugo](http://gohugo.io/)
+## Used at [ferrucc.io](https://ferrucc.io)
 
-The intent of this theme is to provide a solid starting place for Hugo sites with basic features and include best practices for performance, accessibility, and rapid development.
-
-![screenshot](https://raw.githubusercontent.com/budparr/gohugo-theme-ananke/master/images/screenshot.png)
-
-[DEMO](https://gohugo-ananke-theme-demo.netlify.com/)
+[DEMO](https://ferrucc.io/)
 
 Features
 
