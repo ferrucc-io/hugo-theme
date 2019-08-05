@@ -1,0 +1,20 @@
+{
+  "name": "ferruccio-theme",
+  "version": "1.0.0",
+  "description": "Ferruccio Balestreri's blog theme",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferrucc-io/hugo-theme.git"
+  },
+  "keywords": [
+    "hugo",
+    "gohugo"
+  ],
+  "author": "ferrucc-io",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://twitter.com/0xferruccio"
+  },
+  "homepage": "https://github.com/ferrucc-io/hugo-theme"
+}
