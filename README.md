@@ -1,13 +1,16 @@
 # Ferruccio, my theme for [Hugo](http://gohugo.io/)
-## Used at [ferrucc.io](https://ferrucc.io)
+## Used for [ferrucc.io](https://ferrucc.io)
+
+![](static/blog-screenshot.png)
 
 [DEMO](https://ferrucc.io/)
+
+[Site Repository](https://github.com/ferrucc-io/ferruccio)
 
 Features
 
 - Responsive
 - Accessible
-- Contact form 
 - Custom Robots.txt (changes values based on environment)
 - Internal templates for meta data, google analytics, and DISQUS comments
 - RSS Discovery
@@ -47,7 +50,7 @@ This theme uses the "Tachyons" CSS library. This will allow you to manipulate th
 Inside the folder of your Hugo site run:
 
     $ cd themes
-    $ git clone https://github.com/budparr/gohugo-theme-ananke.git
+    $ git clone https://github.com/ferrucc-io/hugo-theme.git
 
 For more information read the official [setup guide](//gohugo.io/overview/installing/) of Hugo.
 
@@ -60,14 +63,7 @@ After installing the theme successfully it requires a just a few more steps to g
 
 ### The config file
 
-Take a look inside the [`exampleSite`](https://github.com/budparr/gohugo-theme-ananke/tree/master/exampleSite) folder of this theme. You'll find a file called [`config.toml`](https://github.com/budparr/gohugo-theme-ananke/blob/master/exampleSite/config.toml). To use it, copy the [`config.toml`](https://github.com/budparr/gohugo-theme-ananke/blob/master/exampleSite/config.toml) in the root folder of your Hugo site. Feel free to change the strings in this theme.
-
-You may need to delete the line: `themesDir = "../.."`
-
-
-### Add comments
-
-To enable DISQUS comments, add `disqusShortname = YOURSHORTNAME` to your config file.
+Take a look inside my [`blog's`](https://github.com/ferrucc-io/ferruccio) repository. You'll find a file called [`config.toml`](https://github.com/ferrucc-io/ferruccio/blob/master/config.toml). To use it, copy the [`config.toml`](https://github.com/ferrucc-io/ferruccio/blob/master/config.toml) in the root folder of your Hugo site. Feel free to change the strings in this theme.
 
 
 
@@ -78,38 +74,6 @@ For any page or post you can add a featured image by including the local path in
 You don't need an image though. The default background color is black, but you can change the color, by changing the default color class in the config.toml file. Choose a background color from any on the [Tachyons](http://tachyons.io/docs/themes/skins/) library site, and preface it with "bg-"
 
 example: `background_color_class = "bg-blue"` or `background_color_class = "bg-gray"`
-
-
-
-### Activate the contact form
-
-This theme includes a shortcode for a contact form that you can add to any page (there is an example on the contact page in the exampleSite folder). One option is to use [formspree.io](//formspree.io/) as proxy to send the actual email. Each month, visitors can send you up to one thousand emails without incurring extra charges. Visit the Formspree site to get the "action" link and add it to your shortcode like this:
-
-```
-{{< form-contact action="http://formspree.io/your@email.com" >}}
-```
-
-### Update font or body classes
-
-The theme is set, by default, to use a near-white background color and the "Avenir" or serif typeface. You can change these in your config file with the `body_classes` parameter, like this:
-
-```
-[params]
-  body_classes = "avenir bg-near-white"
-```
-
-which will give you a body class like this:
-
-```
-<body class="avenir bg-near-white">
-```
-
-You can find a list of available typefaces [here](https://github.com/tachyons-css/tachyons/blob/v4.7.0/src/_font-family.css).
-
-And a list of background colors [here](https://github.com/tachyons-css/tachyons/blob/v4.7.0/src/_skins.css#L96).
-
-
-_n.b. in future versions we will likely separate the typeface and other body classes._
 
 
 ### Custom CSS
@@ -141,11 +105,4 @@ HUGO_ENV=production hugo
 
 ## Contributing
 
-If you find a bug or have an idea for a feature, feel free to use the [issue tracker](https://github.com/budparr/gohugo-theme-ananke/issues) to let me know.
-
-
-
-
-TODO:
-
-- fix hard-coded link to [section](https://github.com/budparr/gohugo-theme-ananke/blob/master/layouts/index.html#L32)
+If you find a bug or have an idea for a feature, feel free to use the [issue tracker](https://github.com/ferrucc-io/hugo-theme/issues) to let me know.
