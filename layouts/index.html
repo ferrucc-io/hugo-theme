@@ -1,4 +1,18 @@
 {{ define "main" }}
+  <div class="pv3 ph3 ph4-ns">
+    <h2>Popular</h2>
+    <div>
+      <div>
+        <a href="https://ferrucc.io/posts/starting-a-blog/">👨‍💻 Everything I learned in 10 years of blogging</a>
+      </div>
+      <div>
+        <a href="https://ferrucc.io/posts/altacucina/">👨‍🍳 From idea to 100k uniques per week in two months</a>
+      </div>
+      <div>
+        <a href="https://bitcoin.ferrucc.io/">💰Principles of Bitcoin Maximalism</a>
+      </div>
+    </div>
+  </div>
   <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy">
     {{ .Content }}
   </article>
@@ -11,7 +25,6 @@
   {{ if ge $section_count 1 }}
     {{/* Derive the section name  */}}
     {{ $section_name := index (.Site.Params.mainSections) 0 }}
-
     <div class="pa3 pa4-ns w-100 w-70-ns center">
       {{/* Use $section_name to get the section title. Use "with" to only show it if it exists */}}
 
