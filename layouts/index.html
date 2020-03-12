@@ -1,63 +1,83 @@
 {{ define "main" }}
   <div class="pv3 ph3 ph4-ns">
-    <h2>Popular</h2>
-    <div>
-      <div>
-        <a href="https://ferrucc.io/posts/starting-a-blog/">👨‍💻 Everything I learned in 10 years of blogging</a>
+    <div class="flex items-end">
+      <div class="w3 h3">
+        <img class="br-100 h2 w2 h3-ns w3-ns" src="https://avatars.io/twitter/0xferruccio" alt="Ferruccio Balestreri">
       </div>
       <div>
-        <a href="https://ferrucc.io/posts/altacucina/">👨‍🍳 From idea to 100k uniques per week in two months</a>
-      </div>
-      <div>
-        <a href="https://bitcoin.ferrucc.io/">💰Principles of Bitcoin Maximalism</a>
+         <div class="ml2 pa1 mw6">
+           <h1 class="ma0 f6 fw6 light-gray">Ferruccio Balestreri</h1>
+           <div class="ma0 pv1 ph2 br2 bg-white near-black">
+             <p class="ma0" >Hey there! How are you doing? I hope you're having a good day :)</p>
+           </div>
+         </div>
       </div>
     </div>
   </div>
-  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy">
-    {{ .Content }}
-  </article>
-  {{/* Define a section to pull recent posts from. For Hugo 0.20 this will default to the section with the most number of pages. */}}
-  {{ $mainSections := .Site.Params.mainSections | default (slice "post") }}
-  {{/* Create a variable with that section to use in multiple places. */}}
-  {{ $section := where .Site.RegularPages "Section" "in" $mainSections }}
-  {{/* Check to see if the section is defined for ranging through it */}}
-  {{ $section_count := len $section }}
-  {{ if ge $section_count 1 }}
-    {{/* Derive the section name  */}}
-    {{ $section_name := index (.Site.Params.mainSections) 0 }}
-    <div class="pa3 pa4-ns w-100 w-70-ns center">
-      {{/* Use $section_name to get the section title. Use "with" to only show it if it exists */}}
-
-      {{ $n_posts := $.Param "recent_posts_number" | default 6 }}
-
-      <section class="w-100 mw8">
-        {{/* Range through the first $n_posts items of the section */}}
-        {{ range (first $n_posts $section) }}
-          <div class="relative w-100 mb4">
-            {{ partial "summary-with-image.html" . }}
-          </div>
-        {{ end }}
-      </section>
-
-      {{ if ge $section_count (add $n_posts 1) }}
-      <section class="w-100">
-        <h1 class="f3">More</h1>
-        {{/* Now, range through the next four after the initial $n_posts items. Nest the requirements, "after" then "first" on the outside */}}
-        {{ range (first 4 (after $n_posts $section))  }}
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="{{ .URL }}" class="link">
-              {{ .Title }}
-            </a>
-          </h2>
-        {{ end }}
-
-        {{/* As above, Use $section_name to get the section title, and URL. Use "with" to only show it if it exists */}}
-        {{ with .Site.GetPage "section" $section_name }}
-          <a href="{{ .URL }}" class="db f5 mr3 b w5">🗄 All my Posts</a>
-        {{ end }}
-        </section>
-      {{ end }}
-
+  <div class="flex-ns">
+    <div class="pv3 ph3 ph4-ns">
+      <h2>Popular</h2>
+      <div>
+        <div>
+          <a href="https://ferrucc.io/posts/starting-a-blog/">👨‍💻 Everything I learned in 10 years of blogging</a>
+        </div>
+        <div>
+          <a href="https://ferrucc.io/posts/altacucina/">👨‍🍳 From idea to 100k uniques per week in two months</a>
+        </div>
+        <div>
+          <a href="https://bitcoin.ferrucc.io/">💰Principles of Bitcoin Maximalism</a>
+        </div>
       </div>
-  {{ end }}
+    </div>
+    <div>
+      <article class="pv3 ph3 ph4-ns">
+        <h2>Recent</h2>
+        {{ .Content }}
+      </article>
+      {{/* Define a section to pull recent posts from. For Hugo 0.20 this will default to the section with the most number of pages. */}}
+      {{ $mainSections := .Site.Params.mainSections | default (slice "post") }}
+      {{/* Create a variable with that section to use in multiple places. */}}
+      {{ $section := where .Site.RegularPages "Section" "in" $mainSections }}
+      {{/* Check to see if the section is defined for ranging through it */}}
+      {{ $section_count := len $section }}
+      {{ if ge $section_count 1 }}
+        {{/* Derive the section name  */}}
+        {{ $section_name := index (.Site.Params.mainSections) 0 }}
+        <div class="ph3 ph4-ns w-100 w-70-ns">
+          {{/* Use $section_name to get the section title. Use "with" to only show it if it exists */}}
+
+          {{ $n_posts := $.Param "recent_posts_number" | default 6 }}
+
+          <section class="w-100 mw8">
+            {{/* Range through the first $n_posts items of the section */}}
+            {{ range (first $n_posts $section) }}
+              <div class="relative w-100 mb4">
+                {{ partial "summary-with-image.html" . }}
+              </div>
+            {{ end }}
+          </section>
+
+          {{ if ge $section_count (add $n_posts 1) }}
+          <section class="w-100">
+            <h1 class="f3">More</h1>
+            {{/* Now, range through the next four after the initial $n_posts items. Nest the requirements, "after" then "first" on the outside */}}
+            {{ range (first 4 (after $n_posts $section))  }}
+              <h2 class="f5 fw4 mb4 dib mr3">
+                <a href="{{ .URL }}" class="link">
+                  {{ .Title }}
+                </a>
+              </h2>
+            {{ end }}
+
+            {{/* As above, Use $section_name to get the section title, and URL. Use "with" to only show it if it exists */}}
+            {{ with .Site.GetPage "section" $section_name }}
+              <a href="{{ .URL }}" class="db f5 mr3 b w5">🗄 All my Posts</a>
+            {{ end }}
+            </section>
+          {{ end }}
+
+          </div>
+      {{ end }}
+    </div>
+  </div>
 {{ end }}
