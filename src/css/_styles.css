@@ -17,3 +17,9 @@ a:hover {
 .nested-links a {
   color: white;
 }
+
+.speech-bubble {
+  position: relative;
+	background: #E4E5EA;
+  border-radius: 2px;
+}
