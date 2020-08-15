@@ -9,7 +9,7 @@
   "scripts": {
     "build:production": "rm -rf ../static/dist && webpack -p",
     "build": "webpack --progress --colors --watch",
-    "start": "npm run build"
+    "start": "yarn build"
   },
   "devDependencies": {
     "assets-webpack-plugin": "^3.5.1",

@@ -4,8 +4,8 @@
 @import '_styles';
 
 body {
-    background: hsl(215, 45%, 40%);
-    color: white;
+    background: #fff;
+    color: #111;
     font: 17px/30px 'Fira Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -15,4 +15,10 @@ body {
 
 .cover-size-auto{
     background-size: 100% !important;
+}
+
+.newsletter-signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

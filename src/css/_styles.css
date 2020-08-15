@@ -5,21 +5,47 @@
 }
 
 a {
-    color: inherit;
+    color: #111;
     text-decoration: none;
-    border-bottom: 2px solid hsl(215, 45%, 60%);
+    border-bottom: 2px solid #111;
 }
 
 a:hover {
-  border-color: hsl(45,98%,77%);
+  color: rgb(88, 110, 224);
+  border-bottom-color: rgb(88, 110, 224);
 }
 
 .nested-links a {
-  color: white;
+  color: #111;
+}
+
+.nested-links a:hover {
+  color: rgb(88, 110, 224);;
 }
 
 .speech-bubble {
   position: relative;
 	background: #E4E5EA;
   border-radius: 2px;
+}
+
+.pagination li a {
+  border: 0;
+}
+
+
+.pagination li.active a:link, .pagination li.active a:active, .pagination li.active a:visited {
+  background: rgba(88, 110, 224, 0.2); 
+}
+
+.pagination li a:hover, .pagination li.active a:hover, .pagination li.active a:hover, .pagination li.active a:hover {
+  background: rgb(88, 110, 224);
+  color: #fff;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
