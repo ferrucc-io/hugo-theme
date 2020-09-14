@@ -49,3 +49,7 @@ a:hover {
   margin: 0;
   padding: 0;
 }
+
+#twitter-footer-icon {
+  border-bottom: 0px;
+}
