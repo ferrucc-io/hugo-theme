@@ -75,12 +75,12 @@
         Nest the requirements, "after" then "first" on the outside */}} {{ range
         (first 4 (after $n_posts $section)) }}
         <h2 class="f5 fw4 mb4 dib mr3">
-          <a href="{{ .URL }}" class="link"> {{ .Title }} </a>
+          <a href="{{ .RelPermalink }}" class="link"> {{ .Title }} </a>
         </h2>
         {{ end }} {{/* As above, Use $section_name to get the section title, and
         URL. Use "with" to only show it if it exists */}} {{ with .Site.GetPage
         "section" $section_name }}
-        <a href="{{ .URL }}" class="db f5 mr3 b w5">🗄 All my Posts</a>
+        <a href="{{ .RelPermalink }}" class="db f5 mr3 b w5">🗄 All my Posts</a>
         {{ end }}
       </section>
       {{ end }}
