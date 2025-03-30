@@ -1,4 +1,13 @@
-{{ $script := .Site.Data.webpack_assets.app }}
-{{ with $script.js }}
-  <script src="{{ relURL (printf "%s%s" "dist/" .) }}"></script>
+{{ if .Site.Data.webpack_assets }}
+  {{ $script := .Site.Data.webpack_assets.app }}
+  {{ with $script.js }}
+    <script src="{{ relURL (printf "%s%s" "dist/" .) }}"></script>
+  {{ end }}
+{{ else if .Site.Data.vite_assets }}
+  {{ with .Site.Data.vite_assets.main.js }}
+    <script type="module" src="{{ relURL (printf "%s%s" "dist/" .) }}"></script>
+  {{ end }}
+  {{ with .Site.Data.vite_assets.main.css }}
+    <link rel="stylesheet" href="{{ relURL (printf "%s%s" "dist/" .) }}">
+  {{ end }}
 {{ end }}
