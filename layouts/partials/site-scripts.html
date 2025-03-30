@@ -1,9 +1,10 @@
-{{ if .Site.Data.webpack_assets }}
-  {{ $script := .Site.Data.webpack_assets.app }}
-  {{ with $script.js }}
-    <script src="{{ relURL (printf "%s%s" "dist/" .) }}"></script>
-  {{ end }}
-{{ else if .Site.Data.vite_assets }}
+
+{{ $isDev := eq (getenv "HUGO_ENV") "development" }}
+{{ if $isDev }}
+  <script type="module" src="http://localhost:5173/@vite/client"></script>
+  <script type="module" src="http://localhost:5173/js/main.js"></script>
+  <link rel="stylesheet" href="http://localhost:5173/css/main.css">
+{{ else }}
   {{ with .Site.Data.vite_assets.main.js }}
     <script type="module" src="{{ relURL (printf "%s%s" "dist/" .) }}"></script>
   {{ end }}

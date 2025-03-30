@@ -1,15 +1,14 @@
 {
   "name": "ferruccio-theme",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Ferruccio Hugo Theme",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:webpack": "echo 'Webpack build is deprecated, use npm run build instead'",
     "build:production": "vite build",
     "preview": "vite preview",
-    "clean": "rm -rf ../static/dist && rm -f ../data/webpack_assets.json"
+    "clean": "rm -rf ../static/dist && rm -f ../data/vite_assets.json"
   },
   "devDependencies": {
     "@vitejs/plugin-legacy": "^5.4.0",

@@ -21,10 +21,7 @@
     <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
     
 
-    {{ $stylesheet := .Site.Data.webpack_assets.app }}
-    {{ with $stylesheet.css }}
-      <link href="{{ relURL (printf "%s%s" "dist/" .) }}" rel="stylesheet">
-    {{ end }}
+    {{ block "scripts" . }}{{ partial "site-scripts.html" . }}{{ end }}
 
     {{ range .Site.Params.custom_css }}
       <link rel="stylesheet" href="{{ relURL ($.Site.BaseURL) }}{{ . }}">
@@ -64,6 +61,5 @@
       {{ block "main" . }}{{ end }}
     </main>
     {{ block "footer" . }}{{ partial "site-footer.html" . }}{{ end }}
-    {{ block "scripts" . }}{{ partial "site-scripts.html" . }}{{ end }}
   </body>
 </html>
