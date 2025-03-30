@@ -3,10 +3,20 @@
 @import '_hugo-internal-templates';
 @import '_styles';
 
+@font-face {
+    font-family: 'Alegreya';
+    src: url('https://fonts.gstatic.com/s/alegreya/v35/4UaBrEBBsBhlBjvfkSLhx6g.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 body {
     background: #F0EEE4;
-    color: #111;
-    font: 17px/30px 'Fira Sans', sans-serif;
+    color: #333333;
+    font-family: 'Alegreya', serif;
+    font-size: 17px;
+    line-height: 30px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
