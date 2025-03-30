@@ -1,3 +1,10 @@
+
+/* Primary palette */
+/* #85A865 */
+/* #759FBC */
+/* #D97757 */
+/* #FACF71 */
+
 /* Put your custom styles here and run `npm start` from the "src" directory on */
 
 #TableOfContents ul li {
@@ -11,21 +18,22 @@ a {
 }
 
 a:hover {
-  color: rgb(88, 110, 224);
-  border-bottom-color: rgb(88, 110, 224);
+  color: #D97757;
+  border-bottom-color: #D97757;
 }
+
 
 .nested-links a {
   color: #111;
 }
 
 .nested-links a:hover {
-  color: rgb(88, 110, 224);;
+  color: #D97757;;
 }
 
 .speech-bubble {
   position: relative;
-	background: #E4E5EA;
+	background: hsl(45, 30%, 85%);
   border-radius: 2px;
 }
 
@@ -39,7 +47,7 @@ a:hover {
 }
 
 .pagination li a:hover, .pagination li.active a:hover, .pagination li.active a:hover, .pagination li.active a:hover {
-  background: rgb(88, 110, 224);
+  background: #D97757;
   color: #fff;
 }
 
