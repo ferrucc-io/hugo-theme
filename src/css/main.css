@@ -20,7 +20,88 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    margin: 50px auto;
+    margin: 0;
+    padding: 0;
+}
+
+.page-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 680px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    transition: transform 0.2s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-2px);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #FACF71;
+    padding: 3px;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    color: #D97757;
+    margin: 0;
+    font-weight: 600;
+}
+
+.status-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+}
+
+.profile-status {
+    background: #F8F3E6;
+    padding: 1rem;
+    border-radius: 12px;
+    color: #759FBC;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    position: relative;
+}
+
+.profile-status:before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #F8F3E6;
 }
 
 .cover-size-auto{
@@ -31,4 +112,43 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 1200px) {
+    .home-illustrations {
+        display: none;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+.sun {
+    transition: all 0.3s ease;
+}
+
+.sun:hover {
+    animation: float 3s ease-in-out infinite;
+    filter: brightness(1.02);
+}
+
+.nav-link {
+    color: #333333;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 1.1rem;
+    border-bottom: none;
+}
+
+.nav-link:hover {
+    color: #D97757;
 }
