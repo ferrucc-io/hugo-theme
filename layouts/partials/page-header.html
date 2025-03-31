@@ -5,8 +5,8 @@
   <div class="{{ .Site.Params.background_color_class | default "" }}">
     {{ partial "site-navigation.html" . }}
   </div>
-  <div>
-    <img src="{{ $featured_image }}" class="w-100">
+  <div class="img-container">
+    <img src="{{ $featured_image }}" class="img-responsive">
   </div>
 {{ else }}
   <header>
